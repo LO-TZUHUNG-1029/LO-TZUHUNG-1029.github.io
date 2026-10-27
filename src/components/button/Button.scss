@@ -4,12 +4,11 @@
   background-color: $buttonColor;
   border: solid 1px $buttonColor;
   color: $textColorDark;
-  font-weight: 700;
+  font-weight: 500;
   width: max-content;
-  padding: 13px 22px;
+  padding: 12px 24px;
   margin-right: 50px;
-  text-transform: uppercase;
-  border-radius: 6px;
+  border-radius: 999px;
   text-align: center;
   text-decoration: none;
   display: block;
@@ -19,10 +18,10 @@
   transition: all 0.3s ease-in-out 0s;
 }
 .main-button:hover {
-  background-color: $darkBoxShadow2;
-  color: $buttonColor;
+  background-color: $buttonHover;
+  border-color: $buttonHover;
+  color: #ffffff;
   transition: all 0.3s ease 0s;
-  transform: translateY(-3px);
 }
 .project-button {
   display: flex;
