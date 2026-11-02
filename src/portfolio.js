@@ -32,14 +32,13 @@ const illustration = {
 // ========== 首頁 ==========
 const greeting = {
   username: "Tzu-Hung Lo",
-  title: "Hi, I'm Jacob. (LO, TZUHUNG)",
+  title: "Hi, I'm Jacob.",
   subTitle:
-    "Mechanical Engineering student at National Taiwan University. I work on UAV flight control — integrating controllers onto real quadrotors and testing them in flight.",
-  // 📷 你本人 + 四旋翼，在 OptiTrack 飛行場或實驗桌前（4:3 橫式）
-  image:
-    "https://placehold.co/1200x900/f5f5f7/6b6b6b?text=You+%2B+quadrotor+in+lab+4:3",
-  imageAlt: "Tzu-Hung Lo with a quadrotor in the lab",
-  // 放英文版履歷 PDF（命名 resume.pdf，放進 src/containers/greeting/）
+    "Mechanical Engineering student at National Taiwan University. I work on UAV flight control — taking controllers from simulation to real flight.",
+  // 📷 hero.jpg 要先放進 src/assets/images/，否則網站會報錯
+  image: require("./assets/images/hero.jpg"),
+  imageAlt: "Tzu-Hung (Jacob) Lo testing a quadrotor on a gimbal test rig",
+  // 網站版履歷（無電話）：命名 resume.pdf，放進 src/containers/greeting/
   resumeLink: "resume.pdf",
   displayGreeting: true
 };
@@ -63,7 +62,7 @@ const skillsSection = {
   skills: [
     "Integrate flight controllers on real quadrotors with PX4 and ROS 2, and validate them in flight with OptiTrack motion capture",
     "Build simulation environments in PX4 SITL and Gazebo to study how sensor noise and sampling rate affect flight",
-    "Model and analyze vehicle dynamics in MATLAB / Simulink and IPG CarMaker"
+    "Model vehicle dynamics in MATLAB / Simulink and IPG CarMaker, and prototype mechatronic systems with Arduino"
   ],
   // 依主軸排序：飛控 → 嵌入式 → 建模 → 機械
   softwareSkills: [
@@ -71,12 +70,13 @@ const skillsSection = {
     {skillName: "ROS 2", fontAwesomeClassname: "fas fa-robot"},
     {skillName: "Gazebo", fontAwesomeClassname: "fas fa-cubes"},
     {skillName: "OptiTrack", fontAwesomeClassname: "fas fa-crosshairs"},
-    {skillName: "FPGA (Vivado/Vitis)", fontAwesomeClassname: "fas fa-microchip"},
-    {skillName: "C++", fontAwesomeClassname: "fas fa-code"},
+    {skillName: "Vivado / Vitis", fontAwesomeClassname: "fas fa-microchip"},
+    {skillName: "C / C++", fontAwesomeClassname: "fas fa-code"},
     {skillName: "Python", fontAwesomeClassname: "fab fa-python"},
     {skillName: "MATLAB / Simulink", fontAwesomeClassname: "fas fa-chart-line"},
-    {skillName: "SolidWorks", fontAwesomeClassname: "fas fa-cube"},
-    {skillName: "Linux", fontAwesomeClassname: "fab fa-linux"}
+    {skillName: "IPG CarMaker", fontAwesomeClassname: "fas fa-car"},
+    {skillName: "Arduino", fontAwesomeClassname: "fas fa-plug"},
+    {skillName: "SolidWorks", fontAwesomeClassname: "fas fa-cube"}
   ],
   display: true
 };
@@ -89,22 +89,32 @@ const techStack = {
 };
 
 // ========== 學歷 ==========
-// 網站不放 GPA，改放飛控相關課程成績（強項）
+// 與英文 CV 一致
 const educationInfo = {
   display: true,
   schools: [
     {
       schoolName: "National Taiwan University",
-      // 換成台大校徽：require("./assets/images/ntuLogo.png")
+      // 換成台大校徽：require("./assets/images/ntu-logo.png")
       logo: require("./assets/images/stanfordLogo.png"),
       subHeader: "B.S. in Mechanical Engineering",
-      duration: "Sep 2024 – Present",
-      desc: "Transferred from National Cheng Kung University (2023–2024). Coursework focused on flight systems and embedded control.",
+      duration: "Sep 2024 – Dec 2027 (Expected)",
+      desc: "Coursework focused on control, embedded systems and flight systems.",
       descBullets: [
-        // 課名請對照成績單上的官方英文名稱
-        "Design, Simulation and Integration of Flight and Space Systems — A-",
-        "Microprocessor Control Systems — A-",
-        "Fluid Mechanics — A"
+        "Overall GPA: 3.5 / 4.3",
+        "Relevant courses: Automatic Control, Microprocessor Controlled Systems, Flight and Space Systems Integration"
+      ]
+    },
+    {
+      schoolName: "National Cheng Kung University",
+      // 換成成大校徽：require("./assets/images/ncku-logo.png")
+      logo: require("./assets/images/harvardLogo.png"),
+      subHeader: "B.S. in Mechanical Engineering (Transferred to NTU)",
+      duration: "Sep 2023 – Jun 2024",
+      desc: "",
+      descBullets: [
+        "Overall GPA: 4.06 / 4.3",
+        "Outstanding Student Award, Fall 2023"
       ]
     }
   ]
@@ -122,11 +132,11 @@ const workExperiences = {
       // 換成實驗室 logo（沒有就用台大校徽）
       companylogo: require("./assets/images/airbnbLogo.png"),
       date: "Feb 2026 – Present",
-      desc: "Advised by Prof. Cheng-Wei Chen. I integrate an FPGA-based MPC flight controller, developed by senior lab members, into a real quadrotor and test it in flight.",
+      desc: "FPGA-Accelerated MPC Flight Controller for Indoor UAV · Supervisor: Prof. Cheng-Wei Chen",
       descBullets: [
-        "Migrated low-level flight control from the Zynq PS to PX4 (Pixhawk 6C), recalibrating the IMU, optical-flow sensor, motors and wiring",
-        "Built the ROS 2 communication between the FPGA MPC solver and PX4",
-        "Validated the new setup in indoor flights with OptiTrack motion capture as ground truth"
+        "Migrated low-level flight control from the Zynq PS to PX4 on a Pixhawk 6C, recalibrating the IMU, optical-flow sensor, motors and power wiring",
+        "Built the ROS 2 link between PX4 and the lab's FPGA-based MPC solver (developed by senior members)",
+        "Validated the system in indoor flight with OptiTrack motion capture as ground truth"
       ]
     },
     {
@@ -142,28 +152,28 @@ const workExperiences = {
       ]
     },
     {
-      role: "Vehicle Dynamics Engineer",
-      company: "NTU Racing Team",
+      role: "Vehicle Dynamics Division",
+      company: "NTU Racing Team (Formula Student)",
       // 換成賽車隊 logo
       companylogo: require("./assets/images/airbnbLogo.png"),
       date: "Sep 2025 – Present",
-      desc: "Vehicle dynamics modeling and parameter studies for the team's race car.",
+      desc: "Vehicle dynamics modeling and parameter analysis for the team's race car.",
       descBullets: [
-        "Built a lap-time simulator in MATLAB and swept center-of-gravity position to find the best CG height range",
+        "Built a MATLAB lap-time simulator and swept center-of-gravity position to find the optimal CG height range",
         "Converted the pushrod suspension into an equivalent heave / roll model in IPG CarMaker"
       ]
     },
     {
-      role: "Lead",
-      company: "NTU MEIC — Study Abroad Guide",
-      // 換成 NTU MEIC logo
+      role: "President",
+      company: "NTU ME International Compass (NTUMEIC)",
+      // 換成 NTUMEIC logo
       companylogo: require("./assets/images/quoraLogo.png"),
       date: "Sep 2025 – Present",
-      desc: "Leading a student-run platform that helps NTU ME students plan study abroad.",
+      desc: "Leading a nonprofit that bridges the information gap for NTU students pursuing graduate study abroad.",
       descBullets: [
-        "Interviewed 6 alumni studying overseas and published their stories with the department newsletter",
-        "Organized 4 application info sessions and resume clinics for 40 attendees",
-        "Started a mentor program matching 20 alumni with students planning to go abroad"
+        "Published dozens of alumni experience-sharing articles on Instagram and Medium",
+        "Organized 4 info sessions and CV review clinics for 40 attendees",
+        "Started a mentor program pairing 20 alumni with department applicants"
       ]
     },
     {
@@ -214,95 +224,54 @@ const featuredProject = {
 };
 
 // ========== 專案卡片 ==========
-// 點卡片會打開詳細視窗：上方照片可左右切換，下方文字可捲動
-// 不想讓某個專案可以點開，就把它的 details、images、footerLink 都刪掉
+// 照片統一 16:9、乾淨背景、同一套色調
 const bigProjects = {
   title: "Projects",
-  subtitle: "THINGS I HAVE DESIGNED AND BUILT",
+  subtitle: "THINGS I HAVE DESIGNED, BUILT AND FLOWN",
   projects: [
     {
-      projectName: "Project One",
-      // 卡片和視窗標題下方的小字：時間、單位
-      meta: "2024–2025 · Lab or Course Name, NTU",
-      // 卡片上的一句話簡介
-      projectDesc: "What it is, what you did, and one key result.",
-      // 卡片封面照片（建議 16:9）
+      // 📷 無人機實機（含投放機構）或飛行中照片
       image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Project+cover+16:9",
-      // 視窗裡可以左右切換的照片（數量不限，第一張會先顯示）
-      // 換成自己的照片：require("./assets/images/project1-1.jpg"),
-      images: [
-        "https://placehold.co/1600x1000/f5f5f7/6b6b6b?text=Photo+1",
-        "https://placehold.co/1600x1000/f5f5f7/6b6b6b?text=Photo+2",
-        "https://placehold.co/1600x1000/f5f5f7/6b6b6b?text=Photo+3"
-      ],
-      // 視窗裡的詳細說明：每一段有標題，內容可以用 text（一段文字）或 bullets（條列），也可以兩個都用
-      details: [
-        {
-          heading: "Overview",
-          text: "Two or three sentences describing the project and your role."
-        },
-        {
-          heading: "Project Goals",
-          bullets: ["Goal one", "Goal two", "Goal three"]
-        },
-        {
-          heading: "Methods",
-          bullets: [
-            "Mechanism: how it is built",
-            "Control: how it is controlled",
-            "Modeling: how you analyzed or verified it"
-          ]
-        },
-        {
-          heading: "Results",
-          bullets: [
-            "Result with a number, e.g. reduced error by 87%",
-            "Another measurable outcome"
-          ]
-        }
-      ],
-      // 視窗最下方的連結（影片、報告等），不需要就留空 []
-      footerLink: [
-        // {name: "Demo video", url: "https://youtube.com/..."},
-        // {name: "Report (PDF)", url: "https://drive.google.com/..."}
-      ]
-    },
-    {
-      projectName: "Project Two",
-      meta: "2024 · Course Name",
-      projectDesc: "What it is, what you did, and one key result.",
-      image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Project+cover+16:9",
-      images: [
-        "https://placehold.co/1600x1000/f5f5f7/6b6b6b?text=Photo+1",
-        "https://placehold.co/1600x1000/f5f5f7/6b6b6b?text=Photo+2"
-      ],
-      details: [
-        {
-          heading: "Overview",
-          text: "Two or three sentences describing the project and your role."
-        },
-        {
-          heading: "Results",
-          bullets: ["Key result one", "Key result two"]
-        }
-      ],
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Rescue+drone+16:9",
+      projectName: "Search-and-Rescue Drone",
+      projectDesc:
+        "A drone that builds a heat map of disaster areas and air-drops rescue balls. I handled flight testing and the drop-release control module. 2nd place, Compassion Tech Innovation Competition 2026.",
       footerLink: []
     },
     {
-      projectName: "Project Three",
-      meta: "2023 · Club or Competition",
-      projectDesc: "What it is, what you did, and one key result.",
+      // 📷 白底折線圖：IMU 取樣率 vs 姿態誤差（或 Gazebo 模擬截圖）
       image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Project+cover+16:9",
-      images: [],
-      details: [
-        {
-          heading: "Overview",
-          text: "Two or three sentences describing the project and your role."
-        }
-      ],
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=IMU+rate+plot+16:9",
+      projectName: "IMU Sampling-Rate Study",
+      projectDesc:
+        "How fast does a flight controller need to read its IMU? I injected realistic sensor noise into PX4 SITL and compared flight performance from 125 to 1000 Hz.",
+      footerLink: []
+    },
+    {
+      // 📷 MATLAB 圖：重心高度 vs 圈速（或賽車實車照）
+      image:
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Lap+time+vs+CG+plot+16:9",
+      projectName: "Lap-Time Simulator",
+      projectDesc:
+        "A MATLAB lap-time simulator for NTU Racing, used to sweep center-of-gravity position and find the best CG height range, paired with a heave / roll suspension model in IPG CarMaker.",
+      footerLink: []
+    },
+    {
+      // 📷 堆高機實車，或 IR 感測陣列特寫
+      image:
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Forklift+robot+16:9",
+      projectName: "Automated Guided Forklift",
+      projectDesc:
+        "A line-following forklift built for Microcontroller Systems. I designed a five-channel IR tracking array and calibrated servo timing so the forks line up with rack slots for repeatable pickup and drop-off.",
+      footerLink: []
+    },
+    {
+      // 📷 氣動肌肉裝置照片
+      image:
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Pneumatic+muscle+16:9",
+      projectName: "Pneumatic Muscle Leg Device",
+      projectDesc:
+        "A stair-climbing assist device at HER Lab. I built pneumatic artificial muscles with Arduino pressure control, reaching 6 cm contraction at 250 kPa against a 2 cm target.",
       footerLink: []
     }
   ],
