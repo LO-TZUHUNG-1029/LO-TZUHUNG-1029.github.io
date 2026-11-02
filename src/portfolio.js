@@ -32,12 +32,12 @@ const illustration = {
 // ========== 首頁 ==========
 const greeting = {
   username: "Tzu-Hung Lo",
-  title: "Hi, I'm Jacob.",
+  title: "I make Drones fly — For Real.",
   subTitle:
-    "Mechanical Engineering student at National Taiwan University. I work on UAV flight control — taking controllers from simulation to real flight.",
+    "Hi, I'm Tzu-Hung. A Mechanical Engineering student at National Taiwan University. I work on UAV flight control — taking controllers from simulation to real flight.",
   // 📷 hero.jpg 要先放進 src/assets/images/，否則網站會報錯
   image: require("./assets/images/hero.jpg"),
-  imageAlt: "Tzu-Hung (Jacob) Lo testing a quadrotor on a gimbal test rig",
+  imageAlt: "Tzu-Hung Lo testing a quadrotor in lab.",
   // 網站版履歷（無電話）：命名 resume.pdf，放進 src/containers/greeting/
   resumeLink: "resume.pdf",
   displayGreeting: true
