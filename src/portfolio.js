@@ -214,45 +214,95 @@ const featuredProject = {
 };
 
 // ========== 專案卡片 ==========
-// 照片統一 16:9、乾淨背景、同一套色調
+// 點卡片會打開詳細視窗：上方照片可左右切換，下方文字可捲動
+// 不想讓某個專案可以點開，就把它的 details、images、footerLink 都刪掉
 const bigProjects = {
   title: "Projects",
-  subtitle: "THINGS I HAVE DESIGNED, BUILT AND FLOWN",
+  subtitle: "THINGS I HAVE DESIGNED AND BUILT",
   projects: [
     {
-      // 📷 無人機實機（含投放機構）或飛行中照片
+      projectName: "Project One",
+      // 卡片和視窗標題下方的小字：時間、單位
+      meta: "2024–2025 · Lab or Course Name, NTU",
+      // 卡片上的一句話簡介
+      projectDesc: "What it is, what you did, and one key result.",
+      // 卡片封面照片（建議 16:9）
       image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Rescue+drone+16:9",
-      projectName: "Search-and-Rescue Drone",
-      projectDesc:
-        "A drone that builds a heat map of disaster areas and air-drops rescue balls. I handled flight testing and the drop-release control module. 2nd place, Compassion Tech Innovation Competition 2026.",
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Project+cover+16:9",
+      // 視窗裡可以左右切換的照片（數量不限，第一張會先顯示）
+      // 換成自己的照片：require("./assets/images/project1-1.jpg"),
+      images: [
+        "https://placehold.co/1600x1000/f5f5f7/6b6b6b?text=Photo+1",
+        "https://placehold.co/1600x1000/f5f5f7/6b6b6b?text=Photo+2",
+        "https://placehold.co/1600x1000/f5f5f7/6b6b6b?text=Photo+3"
+      ],
+      // 視窗裡的詳細說明：每一段有標題，內容可以用 text（一段文字）或 bullets（條列），也可以兩個都用
+      details: [
+        {
+          heading: "Overview",
+          text: "Two or three sentences describing the project and your role."
+        },
+        {
+          heading: "Project Goals",
+          bullets: ["Goal one", "Goal two", "Goal three"]
+        },
+        {
+          heading: "Methods",
+          bullets: [
+            "Mechanism: how it is built",
+            "Control: how it is controlled",
+            "Modeling: how you analyzed or verified it"
+          ]
+        },
+        {
+          heading: "Results",
+          bullets: [
+            "Result with a number, e.g. reduced error by 87%",
+            "Another measurable outcome"
+          ]
+        }
+      ],
+      // 視窗最下方的連結（影片、報告等），不需要就留空 []
+      footerLink: [
+        // {name: "Demo video", url: "https://youtube.com/..."},
+        // {name: "Report (PDF)", url: "https://drive.google.com/..."}
+      ]
+    },
+    {
+      projectName: "Project Two",
+      meta: "2024 · Course Name",
+      projectDesc: "What it is, what you did, and one key result.",
+      image:
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Project+cover+16:9",
+      images: [
+        "https://placehold.co/1600x1000/f5f5f7/6b6b6b?text=Photo+1",
+        "https://placehold.co/1600x1000/f5f5f7/6b6b6b?text=Photo+2"
+      ],
+      details: [
+        {
+          heading: "Overview",
+          text: "Two or three sentences describing the project and your role."
+        },
+        {
+          heading: "Results",
+          bullets: ["Key result one", "Key result two"]
+        }
+      ],
       footerLink: []
     },
     {
-      // 📷 白底折線圖：IMU 取樣率 vs 姿態誤差（或 Gazebo 模擬截圖）
+      projectName: "Project Three",
+      meta: "2023 · Club or Competition",
+      projectDesc: "What it is, what you did, and one key result.",
       image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=IMU+rate+plot+16:9",
-      projectName: "IMU Sampling-Rate Study",
-      projectDesc:
-        "How fast does a flight controller need to read its IMU? I injected realistic sensor noise into PX4 SITL and compared flight performance from 125 to 1000 Hz.",
-      footerLink: []
-    },
-    {
-      // 📷 MATLAB 圖：重心高度 vs 圈速（或賽車實車照）
-      image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Lap+time+vs+CG+plot+16:9",
-      projectName: "Lap-Time Simulator",
-      projectDesc:
-        "A MATLAB lap-time simulator for NTU Racing, used to sweep center-of-gravity position and find the best CG height range, paired with a heave / roll suspension model in IPG CarMaker.",
-      footerLink: []
-    },
-    {
-      // 📷 腳踏車上的感測器與煞車機構特寫
-      image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Bike+braking+system+16:9",
-      projectName: "Auto-Braking Bicycle",
-      projectDesc:
-        "A bicycle system that detects hazards ahead and brakes on its own, built at the MakeNTU 2026 hackathon. I handled system integration and sensor setup.",
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Project+cover+16:9",
+      images: [],
+      details: [
+        {
+          heading: "Overview",
+          text: "Two or three sentences describing the project and your role."
+        }
+      ],
       footerLink: []
     }
   ],

@@ -1,94 +1,83 @@
-import React, {useContext} from "react";
+import React, {useState} from "react";
 import "./StartupProjects.scss";
 import {bigProjects} from "../../portfolio";
 import {Fade} from "react-reveal";
-import StyleContext from "../../contexts/StyleContext";
+import ProjectModal from "../../components/projectModal/ProjectModal";
 
 export default function StartupProject() {
-  function openUrlInNewTab(url) {
-    if (!url) {
-      return;
-    }
-    var win = window.open(url, "_blank");
-    win.focus();
-  }
+  // 目前打開的是哪一個專案（null = 沒有打開）
+  const [openProject, setOpenProject] = useState(null);
 
-  const {isDark} = useContext(StyleContext);
   if (!bigProjects.display) {
     return null;
   }
-  return (
-    <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="projects">
-        <div>
-          <h1 className="skills-heading">{bigProjects.title}</h1>
-          <p
-            className={
-              isDark
-                ? "dark-mode project-subtitle"
-                : "subTitle project-subtitle"
-            }
-          >
-            {bigProjects.subtitle}
-          </p>
 
-          <div className="projects-container">
-            {bigProjects.projects.map((project, i) => {
-              return (
-                <div
-                  key={i}
-                  className={
-                    isDark
-                      ? "dark-mode project-card project-card-dark"
-                      : "project-card project-card-light"
-                  }
-                >
-                  {project.image ? (
-                    <div className="project-image">
-                      <img
-                        src={project.image}
-                        alt={project.projectName}
-                        className="card-image"
-                      ></img>
-                    </div>
-                  ) : null}
-                  <div className="project-detail">
-                    <h5
-                      className={isDark ? "dark-mode card-title" : "card-title"}
-                    >
-                      {project.projectName}
-                    </h5>
-                    <p
-                      className={
-                        isDark ? "dark-mode card-subtitle" : "card-subtitle"
+  // 有寫 details、images 或 footerLink 的專案才能點開
+  const hasDetails = project =>
+    (project.details && project.details.length > 0) ||
+    (project.images && project.images.length > 0) ||
+    (project.footerLink && project.footerLink.length > 0);
+
+  return (
+    <>
+      <Fade bottom duration={1000} distance="20px">
+        <div className="main" id="projects">
+          <div>
+            <h1 className="skills-heading">{bigProjects.title}</h1>
+            <p className="subTitle project-subtitle">{bigProjects.subtitle}</p>
+
+            <div className="projects-container">
+              {bigProjects.projects.map((project, i) => {
+                const clickable = hasDetails(project);
+                return (
+                  <div
+                    key={i}
+                    className={
+                      clickable
+                        ? "project-card project-card-clickable"
+                        : "project-card"
+                    }
+                    onClick={clickable ? () => setOpenProject(project) : null}
+                    role={clickable ? "button" : undefined}
+                    tabIndex={clickable ? 0 : undefined}
+                    onKeyDown={e => {
+                      if (clickable && (e.key === "Enter" || e.key === " ")) {
+                        e.preventDefault();
+                        setOpenProject(project);
                       }
-                    >
-                      {project.projectDesc}
-                    </p>
-                    {project.footerLink ? (
-                      <div className="project-card-footer">
-                        {project.footerLink.map((link, i) => {
-                          return (
-                            <span
-                              key={i}
-                              className={
-                                isDark ? "dark-mode project-tag" : "project-tag"
-                              }
-                              onClick={() => openUrlInNewTab(link.url)}
-                            >
-                              {link.name}
-                            </span>
-                          );
-                        })}
+                    }}
+                  >
+                    {project.image ? (
+                      <div className="project-image">
+                        <img
+                          src={project.image}
+                          alt={project.projectName}
+                          className="card-image"
+                        ></img>
                       </div>
                     ) : null}
+                    <div className="project-detail">
+                      <h5 className="card-title">{project.projectName}</h5>
+                      {project.meta && (
+                        <p className="card-meta">{project.meta}</p>
+                      )}
+                      <p className="card-subtitle">{project.projectDesc}</p>
+                      {clickable && <p className="card-more">View details ›</p>}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-    </Fade>
+      </Fade>
+
+      {openProject && (
+        <ProjectModal
+          project={openProject}
+          onClose={() => setOpenProject(null)}
+        />
+      )}
+    </>
   );
 }
