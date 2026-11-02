@@ -1,5 +1,6 @@
 @import "../../_globalColor";
 
+/* 社群圖示：黑色細線圓框，滑過變 Apple 藍 */
 .social-media-div {
   font-size: 2em;
 }
@@ -9,80 +10,29 @@
 }
 
 .icon-button i {
-  color: $textColorDark;
+  color: $textColor;
+  background-color: transparent;
+  border: 1px solid $lightBorder1;
   border-radius: 2.6rem;
   cursor: pointer;
   display: inline-block;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   height: 2.6rem;
   line-height: 2.6rem;
   margin: 0 5px;
   position: relative;
   text-align: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   width: 2.6rem;
   margin-bottom: 10px;
   transition: 0.2s ease-in;
 }
 
-.facebook i {
-  background-color: $faceBook;
+.icon-button i:hover {
+  color: $buttonHover;
+  border-color: $buttonHover;
 }
 
-.linkedin i {
-  background-color: $linkedin;
-}
-
-.github i {
-  background-color: $github;
-}
-
-.gitlab i {
-  background-color: $gitlab;
-}
-
-.google i {
-  background-color: $google;
-}
-
-.twitter i {
-  background-color: $twitter;
-}
-
-.medium i {
-  background-color: $medium;
-}
-
-.stack-overflow i {
-  background-color: $stackoverflow;
-}
-
-.kaggle i {
-  background-color: $kaggle;
-}
-
-.instagram i {
-  background-color: $instagram;
-}
-
-/* Hover Transition */
-.twitter i:hover,
-.google i:hover,
-.gitlab i:hover,
-.github i:hover,
-.linkedin i:hover,
-.facebook i:hover,
-.instagram i:hover,
-.stack-overflow i:hover,
-.kaggle i:hover,
-.medium i:hover {
-  background-color: $textColor;
-}
-
-/* Media Query */
 @media (max-width: 768px) {
   .social-media-div {
     text-align: center;

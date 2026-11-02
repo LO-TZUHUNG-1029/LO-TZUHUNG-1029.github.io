@@ -1,389 +1,272 @@
-/* Change this file to get your personal Portfolio */
+/* ============================================================
+   這是網站「內容」的總設定檔：文字、連結、圖片都在這裡改。
+   ------------------------------------------------------------
+   換照片的方法：
+   1. 把照片放進 src/assets/images/ 資料夾
+      （檔名用英文、不要空格，例如 uav-hero.jpg）
+   2. 把對應的 image: "https://placehold.co/..." 整串換成
+      image: require("./assets/images/uav-hero.jpg"),
+   ⚠️ 照片請用 .jpg / .png / .webp，不要用 .svg（會顯示不出來）
+   目前的灰色方塊是線上暫時圖，上面寫著建議的比例。
+   ============================================================ */
 
-// To change portfolio colors globally go to the  _globalColor.scss file
+import splashAnimation from "./assets/lottie/splashAnimation";
 
-import emoji from "react-easy-emoji";
-import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
-
-// Splash Screen
-
+// 開場動畫：已關閉
 const splashScreen = {
-  enabled: true, // set false to disable splash screen
+  enabled: false,
   animation: splashAnimation,
-  duration: 2000 // Set animation duration as per your animation
+  duration: 2000
 };
 
-// Summary And Greeting Section
-
+// 保留這個設定（部分舊元件會讀取它），不需要修改
 const illustration = {
-  animated: true // Set to false to use static SVG
+  animated: false
 };
 
+// ========== 首頁 ==========
 const greeting = {
-  username: "Tzu-Hung Lo",
-  title: "Hi all, I'm TZUHUNG, or you can just call me Jacob.",
-  subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
-  ),
-  resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
-  displayGreeting: true // Set false to hide this section, defaults to true
+  username: "Tzu-Hung Lo", // 左上角 logo 的名字
+  title: "Hi, I'm Tzu-Hung. You can call me Jacob.",
+  subTitle:
+    "A Mechanical Engineering student at National Taiwan University, building UAVs and robots that move in interesting ways.",
+  // 首頁右側的照片（建議 4:3 橫式）
+  image: "https://placehold.co/1200x900/f5f5f7/6b6b6b?text=Hero+photo+4:3",
+  imageAlt: "Tzu-Hung Lo working on a UAV",
+  // 履歷按鈕：把你的履歷 PDF 命名為 resume.pdf，
+  // 放進 src/containers/greeting/ 取代原本的檔案。
+  // 不想顯示按鈕就改成 ""
+  resumeLink: "resume.pdf",
+  displayGreeting: true
 };
 
-// Social Media Links
-
+// ========== 社群連結 ==========
+// 留空 "" 的就不會顯示
 const socialMediaLinks = {
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@saadpasta",
-  stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
-  // Instagram, Twitter and Kaggle are also supported in the links!
-  // To customize icons and social links, tweak src/components/SocialMedia
-  display: true // Set true to display this section, defaults to false
+  github: "https://github.com/LO-TZUHUNG-1029",
+  linkedin: "", // 例如 "https://www.linkedin.com/in/xxx/"
+  gmail: "lojacob2020@gmail.com",
+  display: true
 };
 
-// Skills Section
-
+// ========== 技能 ==========
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle: "MECHANICAL DESIGN · CONTROL SYSTEMS · ROBOTICS",
+  // 左側照片（建議 4:3）
+  image: "https://placehold.co/1200x900/f5f5f7/6b6b6b?text=Lab+photo+4:3",
+  imageAlt: "Working in the lab",
   skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
-    ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
-    )
+    "Design and build UAV platforms, from CAD to flight testing",
+    "Develop control systems and embedded firmware for robots",
+    "Prototype mechanisms with 3D printing and machining"
   ],
-
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
-
+  // 技能圖示名稱可到 https://fontawesome.com/v5/search?m=free 搜尋
   softwareSkills: [
-    {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
-    },
-    {
-      skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
-    },
-    {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
-      skillName: "aws",
-      fontAwesomeClassname: "fab fa-aws"
-    },
-    {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
-    },
-    {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    },
-    {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker"
-    }
+    {skillName: "SolidWorks", fontAwesomeClassname: "fas fa-cube"},
+    {skillName: "Python", fontAwesomeClassname: "fab fa-python"},
+    {skillName: "C / C++", fontAwesomeClassname: "fas fa-code"},
+    {skillName: "MATLAB", fontAwesomeClassname: "fas fa-chart-line"},
+    {skillName: "ROS", fontAwesomeClassname: "fas fa-robot"},
+    {skillName: "Embedded", fontAwesomeClassname: "fas fa-microchip"},
+    {skillName: "UAV", fontAwesomeClassname: "fas fa-helicopter"},
+    {skillName: "Linux", fontAwesomeClassname: "fab fa-linux"},
+    {skillName: "Git", fontAwesomeClassname: "fab fa-git-alt"}
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
-// Education Section
+// 技能百分比條：已關閉
+const techStack = {
+  viewSkillBars: false,
+  experience: [],
+  displayCodersrank: false
+};
 
+// ========== 學歷 ==========
 const educationInfo = {
-  display: true, // Set false to hide this section, defaults to true
+  display: true,
   schools: [
     {
-      schoolName: "Harvard University",
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
-      descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-      ]
-    },
-    {
-      schoolName: "Stanford University",
+      schoolName: "National Taiwan University",
+      // 換成台大校徽，例如 require("./assets/images/ntuLogo.png")
       logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
+      subHeader: "B.S. in Mechanical Engineering",
+      duration: "Sep 20XX – Present",
+      desc: "Focus on control systems, mechatronics and robotics.",
+      descBullets: [
+        "Relevant courses: Dynamics, Control Systems, Mechatronics",
+        "GPA: X.XX / 4.30"
+      ]
     }
   ]
 };
 
-// Your top 3 proficient stacks/tech experience
-
-const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
-  experience: [
-    {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Backend",
-      progressPercentage: "70%"
-    },
-    {
-      Stack: "Programming",
-      progressPercentage: "60%"
-    }
-  ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
-};
-
-// Work experience section
-
+// ========== 經歷 ==========
+// 卡片上方的色帶會自動從 logo 取色
 const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+  display: true,
   experience: [
     {
-      role: "Software Engineer",
-      company: "Facebook",
-      companylogo: require("./assets/images/facebookLogo.png"),
-      date: "June 2018 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "Undergraduate Researcher",
+      company: "UAV Lab, NTU",
+      companylogo: require("./assets/images/airbnbLogo.png"),
+      date: "Feb 2025 – Present",
+      desc: "One sentence about what you do in this lab.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "What you built or improved",
+        "A result, ideally with a number"
       ]
     },
     {
-      role: "Front-End Developer",
-      company: "Quora",
+      role: "Team Member",
+      company: "Competition / Club Name",
       companylogo: require("./assets/images/quoraLogo.png"),
-      date: "May 2017 – May 2018",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      role: "Software Engineer Intern",
-      company: "Airbnb",
-      companylogo: require("./assets/images/airbnbLogo.png"),
-      date: "Jan 2015 – Sep 2015",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      date: "Sep 2024 – Jun 2025",
+      desc: "One sentence about your role and the outcome."
     }
   ]
 };
 
-/* Your Open Source Section to View Your Github Pinned Projects
-To know how to get github key look at readme.md */
-
+// GitHub 開源專案區塊：已關閉（需要額外設定 token）
 const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+  showGithubProfile: "false",
+  display: false
 };
 
-// Some big projects you have worked on
+// ========== 代表作：黑底大圖區塊（Apple 風格）==========
+const featuredProject = {
+  display: true,
+  eyebrow: "FEATURED PROJECT",
+  title: "Autonomous UAV",
+  subtitle:
+    "One or two sentences on what the UAV does, why it matters, and what you were responsible for.",
+  // 大圖（建議 16:9 橫式、乾淨背景）
+  image: "https://placehold.co/1600x900/1d1d1f/a1a1a6?text=UAV+photo+16:9",
+  imageAlt: "UAV in flight",
+  // 有飛行影片的話：把 mp4 放進 src/assets/images/，再把下一行改成
+  // video: require("./assets/images/uav-flight.mp4"),
+  // 有影片時會顯示影片，沒有（null）就顯示上面的圖片
+  video: null,
+  // 三個重點數據或特色
+  highlights: [
+    {value: "XX min", label: "Flight time"},
+    {value: "X.X kg", label: "Takeoff weight"},
+    {value: "PID", label: "Flight control"}
+  ],
+  // 按鈕連結，要用時把前面的 // 拿掉
+  links: [
+    // {name: "Watch the demo", url: "https://youtube.com/..."},
+    // {name: "Read the report", url: "https://..."}
+  ]
+};
 
+// ========== 專案卡片 ==========
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "Projects",
+  subtitle: "THINGS I HAVE DESIGNED AND BUILT",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      // 專案照片（建議 16:9 橫式）
+      image:
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Project+photo+16:9",
+      projectName: "Project One",
+      projectDesc: "What it is, what you did, and one key result.",
       footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://saayahealth.com/"
-        }
-        //  you can add extra buttons here.
+        // {name: "Demo video", url: "https://..."}
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://nextu.se/"
-        }
-      ]
+      image:
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Project+photo+16:9",
+      projectName: "Project Two",
+      projectDesc: "What it is, what you did, and one key result.",
+      footerLink: []
+    },
+    {
+      image:
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Project+photo+16:9",
+      projectName: "Project Three",
+      projectDesc: "What it is, what you did, and one key result.",
+      footerLink: []
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
-// Achievement Section
-// Include certificates, talks etc
-
+// ========== 獎項 ==========
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
-
+  title: "Awards",
+  subtitle: "Competitions, scholarships and recognitions.",
   achievementsCards: [
     {
-      title: "Google Code-In Finalist",
-      subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
+      title: "Award Name",
+      subtitle: "Competition name, year. One line about what you achieved.",
       image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Google Code-In Logo",
+      imageAlt: "Award",
       footerLink: [
-        {
-          name: "Certification",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
-        },
-        {
-          name: "Award Letter",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
-        },
-        {
-          name: "Google Code-in Blog",
-          url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
-        }
+        // {name: "Certificate", url: "https://drive.google.com/..."}
       ]
     },
     {
-      title: "Google Assistant Action",
-      subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Google Assistant Action Logo",
-      footerLink: [
-        {
-          name: "View Google Assistant Action",
-          url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
-        }
-      ]
-    },
-
-    {
-      title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
+      title: "Award Name",
+      subtitle: "Competition name, year. One line about what you achieved.",
       image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "PWA Logo",
-      footerLink: [
-        {name: "Certification", url: ""},
-        {
-          name: "Final Project",
-          url: "https://pakistan-olx-1.firebaseapp.com/"
-        }
-      ]
+      imageAlt: "Award",
+      footerLink: []
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
-// Blogs Section
-
+// ========== 以下區塊已關閉 ==========
 const blogSection = {
   title: "Blogs",
-  subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
-  blogs: [
-    {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
-      description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
-    },
-    {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
+  subtitle: "",
+  displayMediumBlogs: "false",
+  blogs: [],
+  display: false
 };
-
-// Talks Sections
 
 const talkSection = {
-  title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
-  ),
-
-  talks: [
-    {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
+  title: "Talks",
+  subtitle: "",
+  talks: [],
+  display: false
 };
-
-// Podcast Section
 
 const podcastSection = {
-  title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
-
-  // Please Provide with Your Podcast embeded Link
-  podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
-  ],
-  display: true // Set false to hide this section, defaults to true
+  title: "Podcast",
+  subtitle: "",
+  podcast: [],
+  display: false
 };
 
-// Resume Section
+const twitterDetails = {
+  userName: "twitter",
+  display: false
+};
+
+// 選單上的「Resume」連結（會跳到首頁的履歷下載按鈕）
 const resumeSection = {
   title: "Resume",
   subtitle: "Feel free to download my resume",
-
-  // Please Provide with Your Podcast embeded Link
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
+// ========== 聯絡 ==========
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
+  title: "Contact Me",
   subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+    "Interested in working together, or just want to talk about drones? My inbox is open.",
+  number: "", // 不想公開電話就留空
+  email_address: "lojacob2020@gmail.com",
+  // 右側照片（可以放個人照）
+  image: "https://placehold.co/1200x900/f5f5f7/6b6b6b?text=Profile+photo+4:3",
+  imageAlt: "Tzu-Hung Lo"
 };
 
-// Twitter Section
-
-const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
-};
-
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const isHireable = false;
 
 export {
   illustration,
@@ -395,6 +278,7 @@ export {
   techStack,
   workExperiences,
   openSource,
+  featuredProject,
   bigProjects,
   achievementSection,
   blogSection,
