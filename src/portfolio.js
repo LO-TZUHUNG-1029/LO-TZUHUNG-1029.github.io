@@ -92,8 +92,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "National Taiwan University",
-      // 換成台大校徽：require("./assets/images/ntu-logo.png")
-      logo: require("./assets/images/stanfordLogo.png"),
+      logo: require("./assets/images/ntu-logo.png"),
       subHeader: "B.S. in Mechanical Engineering",
       duration: "Sep 2024 – Dec 2027 (Expected)",
       desc: "Coursework focused on control, embedded systems and flight systems.",
@@ -104,11 +103,10 @@ const educationInfo = {
     },
     {
       schoolName: "National Cheng Kung University",
-      // 換成成大校徽：require("./assets/images/ncku-logo.png")
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "B.S. in Mechanical Engineering (Transferred to NTU)",
+      logo: require("./assets/images/ncku-logo.png"),
+      subHeader: "B.S. in Mechanical Engineering",
       duration: "Sep 2023 – Jun 2024",
-      desc: "",
+      desc: "Completed my first year here before transferring to NTU.",
       descBullets: [
         "Overall GPA: 4.06 / 4.3",
         "Outstanding Student Award, Fall 2023"

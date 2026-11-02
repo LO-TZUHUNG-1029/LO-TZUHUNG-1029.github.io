@@ -34,10 +34,7 @@
   margin: 0;
   font-size: 28px;
   font-weight: 700;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  height: 27px;
+  line-height: 1.3; /* 原本固定高度 27px 會切掉字的下半部 */
 }
 
 .education-roundedimg {
@@ -97,7 +94,6 @@
   }
   .education-text-school {
     font-size: 20px;
-    height: 23px;
   }
   .education-text-duration {
     font-size: 16px;
