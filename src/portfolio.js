@@ -224,54 +224,167 @@ const featuredProject = {
 };
 
 // ========== 專案卡片 ==========
-// 照片統一 16:9、乾淨背景、同一套色調
+// 點卡片會打開詳細視窗：上方照片可左右切換，下方文字可捲動
+// image  ＝卡片上的封面照（16:9）
+// images ＝視窗裡的輪播照片，第一張建議和封面相同；沒有就刪掉，會改用封面
+// details＝視窗裡的段落，每段可以有 text（一段文字）和 bullets（條列）
+// 不想讓某個專案可以點開，就把它的 details、images、footerLink 都刪掉
 const bigProjects = {
   title: "Projects",
   subtitle: "THINGS I HAVE DESIGNED, BUILT AND FLOWN",
   projects: [
     {
       // 📷 無人機實機（含投放機構）或飛行中照片
-      image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Rescue+drone+16:9",
+      image: "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Rescue+drone+16:9",
       projectName: "Search-and-Rescue Drone",
+      meta: "2026 · Compassion Tech Innovation Competition",
       projectDesc:
-        "A drone that builds a heat map of disaster areas and air-drops rescue balls. I handled flight testing and the drop-release control module. 2nd place, Compassion Tech Innovation Competition 2026.",
+        "A drone that maps disaster areas with a heat map and air-drops rescue balls. 2nd place, College Charity Track.",
+      images: [
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Rescue+drone+16:9",
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Drop+mechanism+close-up+16:9",
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Team+at+award+ceremony+16:9"
+      ],
+      details: [
+        {
+          heading: "Overview",
+          text: "After a disaster, rescuers need to know where people are and get basic supplies to them before ground teams arrive. Our drone builds a heat map of the area and drops rescue balls to people it finds."
+        },
+        {
+          heading: "My role",
+          bullets: [
+            "Ran flight tests of the airframe",
+            "Built the control module that releases the rescue balls"
+          ]
+        },
+        {
+          heading: "Result",
+          text: "2nd place in the College Charity Track, plus the Special Award and the Most Popular Award."
+        }
+      ],
       footerLink: []
     },
     {
       // 📷 白底折線圖：IMU 取樣率 vs 姿態誤差（或 Gazebo 模擬截圖）
-      image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=IMU+rate+plot+16:9",
+      image: "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=IMU+rate+plot+16:9",
       projectName: "IMU Sampling-Rate Study",
+      meta: "2026 · NASA Lab × ELAN Microelectronics",
       projectDesc:
-        "How fast does a flight controller need to read its IMU? I injected realistic sensor noise into PX4 SITL and compared flight performance from 125 to 1000 Hz.",
+        "How fast does a flight controller need to read its IMU? I tested 125 to 1000 Hz in PX4 SITL with realistic sensor noise.",
+      images: [
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=IMU+rate+plot+16:9",
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Gazebo+SITL+screenshot+16:9"
+      ],
+      details: [
+        {
+          heading: "Overview",
+          text: "ELAN is developing its own flight-controller chip and needed to know what IMU sampling rate the chip must support. I answered this in simulation before any hardware existed."
+        },
+        {
+          heading: "What I did",
+          bullets: [
+            "Set up a PX4 SITL simulation environment",
+            "Injected sensor noise to mimic real measurement error",
+            "Compared flight performance across IMU rates from 125 to 1000 Hz"
+          ]
+        },
+        {
+          heading: "Result",
+          text: "The results were used as input for the chip's specifications."
+        }
+      ],
       footerLink: []
     },
     {
       // 📷 MATLAB 圖：重心高度 vs 圈速（或賽車實車照）
-      image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Lap+time+vs+CG+plot+16:9",
+      image: "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Lap+time+vs+CG+plot+16:9",
       projectName: "Lap-Time Simulator",
+      meta: "2025 – Present · NTU Racing Team",
       projectDesc:
-        "A MATLAB lap-time simulator for NTU Racing, used to sweep center-of-gravity position and find the best CG height range, paired with a heave / roll suspension model in IPG CarMaker.",
+        "A MATLAB lap-time simulator used to find the best center-of-gravity height for the team's Formula Student car.",
+      images: [
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Lap+time+vs+CG+plot+16:9",
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=CarMaker+suspension+model+16:9",
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Race+car+16:9"
+      ],
+      details: [
+        {
+          heading: "Overview",
+          text: "Where the mass sits changes how fast a race car can corner. I built tools to test this in simulation, so the chassis team could make design decisions with numbers."
+        },
+        {
+          heading: "What I did",
+          bullets: [
+            "Built a lap-time simulator in MATLAB and swept center-of-gravity position",
+            "Converted the pushrod suspension into an equivalent heave / roll model in IPG CarMaker"
+          ]
+        },
+        {
+          heading: "Result",
+          text: "Found the optimal CG height range to guide chassis design."
+        }
+      ],
       footerLink: []
     },
     {
       // 📷 堆高機實車，或 IR 感測陣列特寫
-      image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Forklift+robot+16:9",
+      image: "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Forklift+robot+16:9",
       projectName: "Automated Guided Forklift",
+      meta: "Feb – Jun 2026 · Microcontroller Systems, NTU",
       projectDesc:
-        "A line-following forklift built for Microcontroller Systems. I designed a five-channel IR tracking array and calibrated servo timing so the forks line up with rack slots for repeatable pickup and drop-off.",
+        "A line-following forklift that picks up and drops off loads at rack slots on its own.",
+      images: [
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Forklift+robot+16:9",
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=IR+sensor+array+16:9"
+      ],
+      details: [
+        {
+          heading: "Overview",
+          text: "Final project for Microcontroller Systems: a small forklift that follows a line, stops at the right rack, and moves loads without help."
+        },
+        {
+          heading: "What I did",
+          bullets: [
+            "Designed a five-channel TCRT5000 IR reflectance array and its line-tracking logic",
+            "Tuned sensor placement and per-channel thresholds for curves and intersections",
+            "Calibrated MG996R servo timing so the forks line up with rack slots"
+          ]
+        },
+        {
+          heading: "Result",
+          text: "Repeatable pickup and drop-off along the track."
+        }
+      ],
       footerLink: []
     },
     {
       // 📷 氣動肌肉裝置照片
-      image:
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Pneumatic+muscle+16:9",
+      image: "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Pneumatic+muscle+16:9",
       projectName: "Pneumatic Muscle Leg Device",
+      meta: "Sep 2025 – Jan 2026 · HER Lab, NTU ME",
       projectDesc:
-        "A stair-climbing assist device at HER Lab. I built pneumatic artificial muscles with Arduino pressure control, reaching 6 cm contraction at 250 kPa against a 2 cm target.",
+        "A stair-climbing assist device driven by pneumatic artificial muscles. Reached 6 cm contraction against a 2 cm target.",
+      images: [
+        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Pneumatic+muscle+16:9"
+      ],
+      details: [
+        {
+          heading: "Overview",
+          text: "A wearable leg device that helps people climb stairs, powered by pneumatic artificial muscles."
+        },
+        {
+          heading: "What I did",
+          bullets: [
+            "Designed and fabricated end fittings and heat-shrink terminations, sized to measured leg dimensions",
+            "Implemented Arduino pressure control through an electro-pneumatic proportional valve",
+            "Redesigned the signal-conditioning circuit to remove response lag"
+          ]
+        },
+        {
+          heading: "Result",
+          text: "6 cm contraction at 250 kPa, against a 2 cm target."
+        }
+      ],
       footerLink: []
     }
   ],
