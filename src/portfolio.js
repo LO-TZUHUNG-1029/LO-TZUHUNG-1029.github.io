@@ -55,27 +55,24 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I do",
   subTitle: "FLIGHT CONTROL · EMBEDDED SYSTEMS · MODELING & SIMULATION",
-  // 📷 實驗桌特寫：Pixhawk 6C + Zynq 板 + 線材（4:3，俯拍、乾淨桌面）
-  image:
-    "https://placehold.co/1200x900/f5f5f7/6b6b6b?text=Pixhawk+%2B+FPGA+on+bench+4:3",
-  imageAlt: "Pixhawk flight controller and FPGA board on a lab bench",
+  image: require("./assets/images/skills.jpg"),
+  imageAlt: "Pixhawk 6C flight controller and wiring on the quadrotor",
   skills: [
-    "Integrate flight controllers on real quadrotors with PX4 and ROS 2, and validate them in flight with OptiTrack motion capture",
+    "Bring flight controllers from the bench to real flight — integrating PX4 and ROS 2 on quadrotors and validating them with OptiTrack motion capture",
     "Build simulation environments in PX4 SITL and Gazebo to study how sensor noise and sampling rate affect flight",
-    "Model vehicle dynamics in MATLAB / Simulink and IPG CarMaker, and prototype mechatronic systems with Arduino"
+    "Model and analyze vehicle dynamics in MATLAB / Simulink and IPG CarMaker, and prototype mechatronic systems with Arduino"
   ],
-  // 依主軸排序：飛控 → 嵌入式 → 建模 → 機械
+  // 依主軸排序：飛控 → 嵌入式 → 程式 → 建模 → 機械
   softwareSkills: [
     {skillName: "PX4", fontAwesomeClassname: "fas fa-helicopter"},
     {skillName: "ROS 2", fontAwesomeClassname: "fas fa-robot"},
-    {skillName: "Gazebo", fontAwesomeClassname: "fas fa-cubes"},
+    {skillName: "Gazebo / SITL", fontAwesomeClassname: "fas fa-cubes"},
     {skillName: "OptiTrack", fontAwesomeClassname: "fas fa-crosshairs"},
     {skillName: "Vivado / Vitis", fontAwesomeClassname: "fas fa-microchip"},
-    {skillName: "C / C++", fontAwesomeClassname: "fas fa-code"},
-    {skillName: "Python", fontAwesomeClassname: "fab fa-python"},
+    //{skillName: "C / C++", fontAwesomeClassname: "fas fa-code"},
+    //{skillName: "Python", fontAwesomeClassname: "fab fa-python"},
     {skillName: "MATLAB / Simulink", fontAwesomeClassname: "fas fa-chart-line"},
-    {skillName: "IPG CarMaker", fontAwesomeClassname: "fas fa-car"},
-    {skillName: "Arduino", fontAwesomeClassname: "fas fa-plug"},
+    //{skillName: "IPG CarMaker", fontAwesomeClassname: "fas fa-car"},
     {skillName: "SolidWorks", fontAwesomeClassname: "fas fa-cube"}
   ],
   display: true
