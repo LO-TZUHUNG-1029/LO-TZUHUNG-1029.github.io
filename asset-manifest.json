@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.acd9d887.css",
-    "main.js": "/static/js/main.5fb4ab38.js",
+    "main.js": "/static/js/main.9392c5ce.js",
     "static/css/64.321cb3da.chunk.css": "/static/css/64.321cb3da.chunk.css",
     "static/js/64.56dc6704.chunk.js": "/static/js/64.56dc6704.chunk.js",
     "static/css/769.a01dde10.chunk.css": "/static/css/769.a01dde10.chunk.css",
     "static/js/769.54a6b126.chunk.js": "/static/js/769.54a6b126.chunk.js",
-    "static/media/rescue-booth.jpg": "/static/media/rescue-booth.cb3aa27d8e8dc51159a1.jpg",
     "static/media/skills.jpg": "/static/media/skills.4005e3a7f615b83ee589.jpg",
     "static/media/rescue-award.jpg": "/static/media/rescue-award.62544d3771616b6d1035.jpg",
     "static/media/forklift-pickup.jpg": "/static/media/forklift-pickup.05eddbdf5382f9c63e74.jpg",
     "static/media/ntu-logo.png": "/static/media/ntu-logo.19daf553b2186e5e398d.png",
     "static/media/featured.jpg": "/static/media/featured.06d7cc20b62a12f3393f.jpg",
+    "static/media/rescue-booth-full.jpg": "/static/media/rescue-booth-full.6f40b600e4680879c7ee.jpg",
     "static/media/forklift-track.jpg": "/static/media/forklift-track.83b5934cabe9cf86fe64.jpg",
     "static/media/hero.jpg": "/static/media/hero.bdde29d058b1eaf73d7d.jpg",
     "static/media/lap-contour.jpg": "/static/media/lap-contour.449a390d6eb88209b82c.jpg",
@@ -37,7 +37,7 @@
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.acd9d887.css.map": "/static/css/main.acd9d887.css.map",
-    "main.5fb4ab38.js.map": "/static/js/main.5fb4ab38.js.map",
+    "main.9392c5ce.js.map": "/static/js/main.9392c5ce.js.map",
     "64.321cb3da.chunk.css.map": "/static/css/64.321cb3da.chunk.css.map",
     "64.56dc6704.chunk.js.map": "/static/js/64.56dc6704.chunk.js.map",
     "769.a01dde10.chunk.css.map": "/static/css/769.a01dde10.chunk.css.map",
@@ -45,6 +45,6 @@
   },
   "entrypoints": [
     "static/css/main.acd9d887.css",
-    "static/js/main.5fb4ab38.js"
+    "static/js/main.9392c5ce.js"
   ]
 }
