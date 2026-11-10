@@ -4,11 +4,15 @@ import {bigProjects} from "../../portfolio";
 import {Fade} from "react-reveal";
 import ProjectModal from "../../components/projectModal/ProjectModal";
 
-export default function StartupProject() {
+// section：要顯示的資料（預設是 bigProjects）；sectionId：選單跳轉用的 id
+export default function StartupProject({
+  section = bigProjects,
+  sectionId = "projects"
+}) {
   // 目前打開的是哪一個專案（null = 沒有打開）
   const [openProject, setOpenProject] = useState(null);
 
-  if (!bigProjects.display) {
+  if (!section || !section.display) {
     return null;
   }
 
@@ -21,13 +25,13 @@ export default function StartupProject() {
   return (
     <>
       <Fade bottom duration={1000} distance="20px">
-        <div className="main" id="projects">
+        <div className="main" id={sectionId}>
           <div>
-            <h1 className="skills-heading">{bigProjects.title}</h1>
-            <p className="subTitle project-subtitle">{bigProjects.subtitle}</p>
+            <h1 className="skills-heading">{section.title}</h1>
+            <p className="subTitle project-subtitle">{section.subtitle}</p>
 
             <div className="projects-container">
-              {bigProjects.projects.map((project, i) => {
+              {section.projects.map((project, i) => {
                 const clickable = hasDetails(project);
                 return (
                   <div

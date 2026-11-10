@@ -373,6 +373,101 @@ const bigProjects = {
   display: true
 };
 
+// ========== 社群與國際交流（第二組專案卡片，放照片與證書）==========
+// 格式和上面的 bigProjects 完全一樣；images 可以放活動照片和證書掃描檔
+const communityProjects = {
+  title: "Community & Leadership",
+  subtitle: "BEYOND THE LAB: PEOPLE, CULTURES AND COMMUNITIES",
+  projects: [
+    {
+      image: require("./assets/images/ambassador-group14.jpg"),
+      projectName: "International Student Ambassador & Volunteer",
+      meta: "Spring 2025 · Fall 2025 · Fall 2026 · Office of International Affairs, NTU",
+      projectDesc:
+        "Three semesters helping new international students settle in at NTU, from ambassador to team lead to one-on-one volunteer.",
+      images: [
+        require("./assets/images/ambassador-group14.jpg"),
+        require("./assets/images/ambassador-group12.jpg"),
+        require("./assets/images/ambassador-jump.jpg"),
+        require("./assets/images/ambassador-cert-spring2025.jpg"),
+        require("./assets/images/ambassador-cert-fall2025.jpg")
+      ],
+      details: [
+        {
+          heading: "Overview",
+          text: "Moving to a new country is hard. Through the Office of International Affairs' Welcome Ambassador Program, I helped incoming international and exchange students get through Welcome Week and their first weeks at NTU, from campus tours to housing. Certified by the Office of International Affairs for Spring 2025 and Fall 2025."
+        },
+        {
+          heading: "What I did",
+          bullets: [
+            "Ambassador (Spring 2025): ran campus tours and helped dozens of students check in for the Chinese proficiency test",
+            "Team Lead (Fall 2025): led 3 ambassadors to plan and run campus tours for new international students",
+            "Volunteer (Fall 2026): supported 4 international and exchange students one-on-one with pre-arrival registration, course selection and housing"
+          ]
+        }
+      ],
+      footerLink: []
+    },
+    {
+      // 學童臉部已模糊處理
+      image: require("./assets/images/icl-gym.jpg"),
+      projectName: "ICL International Service-Learning",
+      meta: "Spring 2025 · Service-Learning Course, NTU",
+      projectDesc:
+        "Teamed up with a French exchange student to run weekly cultural exchanges with elementary school students in Pingtung.",
+      images: [
+        require("./assets/images/icl-gym.jpg"),
+        require("./assets/images/icl-classroom.jpg")
+      ],
+      details: [
+        {
+          heading: "Overview",
+          text: "A service-learning course that pairs NTU students with international students to bring cultural exchange to schools in rural Taiwan."
+        },
+        {
+          heading: "What I did",
+          bullets: [
+            "Paired with a French exchange student to plan and lead weekly online sessions with students at Datong Elementary School in Pingtung",
+            "Visited the school in person for an on-site exchange day in April 2025"
+          ]
+        }
+      ],
+      footerLink: []
+    },
+    {
+      image: require("./assets/images/ntumeic-session.jpg"),
+      projectName: "NTU ME International Compass",
+      meta: "Sep 2025 – Present · President",
+      projectDesc:
+        "Leading a nonprofit that helps NTU students plan graduate study abroad, through alumni stories, info sessions and mentoring.",
+      images: [
+        require("./assets/images/ntumeic-session.jpg"),
+        require("./assets/images/ntumeic-interview.jpg"),
+        require("./assets/images/ntumeic-mentors.jpg")
+      ],
+      details: [
+        {
+          heading: "Overview",
+          text: "Many students want to study abroad but don't know where to start. NTUMEIC closes that information gap by connecting them with alumni who have already made the move."
+        },
+        {
+          heading: "What I did",
+          bullets: [
+            "Published dozens of alumni experience-sharing articles on Instagram and Medium",
+            "Organized 4 info sessions and CV review clinics for 40 attendees",
+            "Started MENTORS, a mentor program pairing 20 alumni with department applicants, now in its second cohort with open weekly consultations and three-stage follow-up after matching"
+          ]
+        }
+      ],
+      footerLink: [
+        {name: "Instagram", url: "https://www.instagram.com/ntume_ic/"},
+        {name: "Medium", url: "https://medium.com/@ntumeinternationalcompass"}
+      ]
+    }
+  ],
+  display: true
+};
+
 // ========== 獎項與證照 ==========
 // 圖片建議 16:9，會填滿卡片上方的圖片區
 const achievementSection = {
@@ -477,6 +572,7 @@ export {
   openSource,
   featuredProject,
   bigProjects,
+  communityProjects,
   achievementSection,
   blogSection,
   talkSection,
