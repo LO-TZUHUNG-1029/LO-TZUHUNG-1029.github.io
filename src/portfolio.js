@@ -141,7 +141,7 @@ const workExperiences = {
       date: "Sep 2025 – Present",
       desc: "Vehicle dynamics modeling and parameter analysis for the team's race car.",
       descBullets: [
-        "Built a MATLAB lap-time simulator and swept center-of-gravity position to find the optimal CG height range",
+        "Built a MATLAB lap-time simulator and swept weight distribution and wheelbase across acceleration, skidpad and autocross events",
         "Converted the pushrod suspension into an equivalent heave / roll model in IPG CarMaker"
       ]
     },
@@ -212,16 +212,15 @@ const bigProjects = {
   subtitle: "THINGS I HAVE DESIGNED, BUILT AND FLOWN",
   projects: [
     {
-      // 📷 無人機實機（含投放機構）或飛行中照片
-      image: "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Rescue+drone+16:9",
+      image: require("./assets/images/rescue-flight.jpg"),
       projectName: "Search-and-Rescue Drone",
       meta: "2026 · Compassion Tech Innovation Competition",
       projectDesc:
         "A drone that maps disaster areas with a heat map and air-drops rescue balls. 2nd place, College Charity Track.",
       images: [
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Rescue+drone+16:9",
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Drop+mechanism+close-up+16:9",
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Team+at+award+ceremony+16:9"
+        require("./assets/images/rescue-flight.jpg"),
+        require("./assets/images/rescue-booth.jpg"),
+        require("./assets/images/rescue-award.jpg")
       ],
       details: [
         {
@@ -243,82 +242,85 @@ const bigProjects = {
       footerLink: []
     },
     {
-      // 📷 白底折線圖：IMU 取樣率 vs 姿態誤差（或 Gazebo 模擬截圖）
-      image: "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=IMU+rate+plot+16:9",
+      // 封面：K = 3.3 時 125 Hz 與 1000 Hz 的響應對比
+      image: require("./assets/images/imu-plot.jpg"),
       projectName: "IMU Sampling-Rate Study",
       meta: "2026 · NASA Lab × ELAN Microelectronics",
       projectDesc:
-        "How fast does a flight controller need to read its IMU? I tested 125 to 1000 Hz in PX4 SITL with realistic sensor noise.",
+        "How fast does a flight controller need to read its IMU? At tuned gains, dropping from 1000 Hz to 125 Hz cut damping from ζ = 0.52 to 0.10.",
       images: [
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=IMU+rate+plot+16:9",
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Gazebo+SITL+screenshot+16:9"
+        require("./assets/images/imu-plot.jpg"),
+        require("./assets/images/imu-plot-full.jpg"),
+        require("./assets/images/imu-gazebo.jpg")
       ],
       details: [
         {
           heading: "Overview",
-          text: "ELAN is developing its own flight-controller chip and needed to know what IMU sampling rate the chip must support. I answered this in simulation before any hardware existed."
+          text: "ELAN is developing its own flight-controller chip and needed to know what IMU sampling rate the chip must support. I answered this in simulation before any hardware existed, using a PX4 x500 quadrotor in Gazebo."
         },
         {
           heading: "What I did",
           bullets: [
-            "Set up a PX4 SITL simulation environment",
-            "Injected sensor noise to mimic real measurement error",
-            "Compared flight performance across IMU rates from 125 to 1000 Hz"
+            "Set up a PX4 SITL environment and injected sensor noise to mimic real measurement error",
+            "Ran +5° roll steps and averaged the roll-rate response over 8 steps at each IMU rate",
+            "Compared 125 Hz and 1000 Hz at PX4 default gains (K = 1.0) and at gains tuned at 1 kHz (K = 3.3), estimating the damping ratio ζ from each response"
           ]
         },
         {
           heading: "Result",
-          text: "The results were used as input for the chip's specifications."
+          text: "At default gains the two rates behave almost the same (ζ = 0.25 vs 0.27). But once the controller is tuned more aggressively, 1000 Hz stays well damped (ζ = 0.52) while 125 Hz oscillates strongly (ζ = 0.10). A low IMU rate limits how aggressively the controller can be tuned, which fed into the chip's specifications."
         }
       ],
       footerLink: []
     },
     {
-      // 📷 MATLAB 圖：重心高度 vs 圈速（或賽車實車照）
-      image: "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Lap+time+vs+CG+plot+16:9",
+      // 封面：Autocross 圈速對重量分配與軸距的掃描
+      image: require("./assets/images/lap-autocross.jpg"),
       projectName: "Lap-Time Simulator",
       meta: "2025 – Present · NTU Racing Team",
       projectDesc:
-        "A MATLAB lap-time simulator used to find the best center-of-gravity height for the team's Formula Student car.",
+        "A MATLAB lap-time simulator that sweeps weight distribution and wheelbase to show where the team's Formula Student car gains time.",
       images: [
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Lap+time+vs+CG+plot+16:9",
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=CarMaker+suspension+model+16:9",
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Race+car+16:9"
+        require("./assets/images/lap-autocross.jpg"),
+        require("./assets/images/lap-sweep.jpg"),
+        require("./assets/images/lap-contour.jpg")
       ],
       details: [
         {
           heading: "Overview",
-          text: "Where the mass sits changes how fast a race car can corner. I built tools to test this in simulation, so the chassis team could make design decisions with numbers."
+          text: "Where the mass sits and how long the car is both change lap time, and they trade off differently in each Formula Student event. I built tools to test this in simulation, so the chassis team could make design decisions with numbers."
         },
         {
           heading: "What I did",
           bullets: [
-            "Built a lap-time simulator in MATLAB and swept center-of-gravity position",
+            "Built a lap-time simulator in MATLAB covering the acceleration, skidpad and autocross events",
+            "Swept weight distribution (CoG split 0.40–0.56) and wheelbase (1.43–1.63 m) around the current design, and mapped the lap-time change in each event",
             "Converted the pushrod suspension into an equivalent heave / roll model in IPG CarMaker"
           ]
         },
         {
           heading: "Result",
-          text: "Found the optimal CG height range to guide chassis design."
+          text: "Skidpad and autocross times are lowest near a 0.50–0.51 split, while acceleration keeps improving as the split rises. In autocross, a longer wheelbase was faster at every split, saving up to about 0.05 s against the current design. These trade-offs give the chassis team a clear picture of what each change costs or gains."
         }
       ],
       footerLink: []
     },
     {
-      // 📷 堆高機實車，或 IR 感測陣列特寫
-      image: "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Forklift+robot+16:9",
+      // 封面：CAD 系統架構圖
+      image: require("./assets/images/forklift-cad.jpg"),
       projectName: "Automated Guided Forklift",
       meta: "Feb – Jun 2026 · Microcontroller Systems, NTU",
       projectDesc:
         "A line-following forklift that picks up and drops off loads at rack slots on its own.",
       images: [
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Forklift+robot+16:9",
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=IR+sensor+array+16:9"
+        require("./assets/images/forklift-cad.jpg"),
+        require("./assets/images/forklift-pickup.jpg"),
+        require("./assets/images/forklift-track.jpg")
       ],
       details: [
         {
           heading: "Overview",
-          text: "Final project for Microcontroller Systems: a small forklift that follows a line, stops at the right rack, and moves loads without help."
+          text: "Final project for Microcontroller Systems: a small forklift that follows a taped track, stops at the right rack, and moves loads without help. A Raspberry Pi with a camera handles high-level tasks, a Raspberry Pi Pico drives the motors, and a servo raises the fork through a rack-and-pinion lift."
         },
         {
           heading: "What I did",
@@ -336,14 +338,16 @@ const bigProjects = {
       footerLink: []
     },
     {
-      // 📷 氣動肌肉裝置照片
-      image: "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Pneumatic+muscle+16:9",
+      // 封面：腿部裝置測試（動作追蹤）
+      image: require("./assets/images/muscle-leg.jpg"),
       projectName: "Pneumatic Muscle Leg Device",
       meta: "Sep 2025 – Jan 2026 · HER Lab, NTU ME",
       projectDesc:
         "A stair-climbing assist device driven by pneumatic artificial muscles. Reached 6 cm contraction against a 2 cm target.",
       images: [
-        "https://placehold.co/1600x900/f5f5f7/6b6b6b?text=Pneumatic+muscle+16:9"
+        require("./assets/images/muscle-leg.jpg"),
+        require("./assets/images/muscle-actuator.jpg"),
+        require("./assets/images/muscle-control.jpg")
       ],
       details: [
         {

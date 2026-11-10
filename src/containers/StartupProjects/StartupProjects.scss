@@ -29,15 +29,18 @@
   background-color: $lightBackground3;
 }
 
-.card-image {
+/* 寫成 .project-image .card-image：獎項卡片也有一個 .card-image（寬 250px），
+   提高優先權，避免專案照片被縮小 */
+.project-image .card-image {
   width: 100%;
+  max-width: none;
   height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.6s ease;
 }
 
-.project-card:hover .card-image {
+.project-card:hover .project-image .card-image {
   transform: scale(1.04);
 }
 
