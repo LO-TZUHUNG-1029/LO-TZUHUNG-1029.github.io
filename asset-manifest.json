@@ -1,19 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.52b76074.css",
-    "main.js": "/static/js/main.ef331a0e.js",
+    "main.css": "/static/css/main.acd9d887.css",
+    "main.js": "/static/js/main.5fb4ab38.js",
     "static/css/64.321cb3da.chunk.css": "/static/css/64.321cb3da.chunk.css",
     "static/js/64.56dc6704.chunk.js": "/static/js/64.56dc6704.chunk.js",
     "static/css/769.a01dde10.chunk.css": "/static/css/769.a01dde10.chunk.css",
-    "static/js/769.bda0d7b7.chunk.js": "/static/js/769.bda0d7b7.chunk.js",
+    "static/js/769.54a6b126.chunk.js": "/static/js/769.54a6b126.chunk.js",
+    "static/media/rescue-booth.jpg": "/static/media/rescue-booth.cb3aa27d8e8dc51159a1.jpg",
     "static/media/skills.jpg": "/static/media/skills.4005e3a7f615b83ee589.jpg",
+    "static/media/rescue-award.jpg": "/static/media/rescue-award.62544d3771616b6d1035.jpg",
+    "static/media/forklift-pickup.jpg": "/static/media/forklift-pickup.05eddbdf5382f9c63e74.jpg",
     "static/media/ntu-logo.png": "/static/media/ntu-logo.19daf553b2186e5e398d.png",
     "static/media/featured.jpg": "/static/media/featured.06d7cc20b62a12f3393f.jpg",
+    "static/media/forklift-track.jpg": "/static/media/forklift-track.83b5934cabe9cf86fe64.jpg",
     "static/media/hero.jpg": "/static/media/hero.bdde29d058b1eaf73d7d.jpg",
+    "static/media/lap-contour.jpg": "/static/media/lap-contour.449a390d6eb88209b82c.jpg",
+    "static/media/muscle-control.jpg": "/static/media/muscle-control.e2e85033db66651753db.jpg",
+    "static/media/imu-plot-full.jpg": "/static/media/imu-plot-full.260b977fb131d87c00b2.jpg",
+    "static/media/lap-sweep.jpg": "/static/media/lap-sweep.8b39be8147430dd25105.jpg",
+    "static/media/forklift-cad.jpg": "/static/media/forklift-cad.da424a29eb68003598af.jpg",
+    "static/media/lap-autocross.jpg": "/static/media/lap-autocross.5e9a86872438cb8c05a5.jpg",
     "static/media/ntumeic-logo.png": "/static/media/ntumeic-logo.fe7b4cbd192be8f3a4a9.png",
     "static/media/oia-logo.png": "/static/media/oia-logo.ee8ad6c5d54b2c539c8d.png",
+    "static/media/imu-plot.jpg": "/static/media/imu-plot.2cf3226583df3a93d6ba.jpg",
     "static/media/ncku-logo.png": "/static/media/ncku-logo.6a1c5228502e5fc8696d.png",
+    "static/media/muscle-leg.jpg": "/static/media/muscle-leg.ecb779a1ba12d8231f7e.jpg",
+    "static/media/muscle-actuator.jpg": "/static/media/muscle-actuator.699ea2d1b23fdfdcf5d5.jpg",
+    "static/media/imu-gazebo.jpg": "/static/media/imu-gazebo.c60b25e9e8d92414a4e0.jpg",
     "static/media/resume.pdf": "/static/media/resume.ff4222280f5448e52ca2.pdf",
+    "static/media/rescue-flight.jpg": "/static/media/rescue-flight.d968655f2dd9a3de2b76.jpg",
     "static/media/nasa-lab-logo.png": "/static/media/nasa-lab-logo.fbb0803fd09e1262edff.png",
     "static/media/ntu-racing-logo.png": "/static/media/ntu-racing-logo.fe5ae288ee48f1aaa50d.png",
     "static/media/codeInLogo.webp": "/static/media/codeInLogo.e41a71d512efeda2a55c.webp",
@@ -21,15 +36,15 @@
     "static/media/pwaLogo.webp": "/static/media/pwaLogo.8bf2293da0ca66249e37.webp",
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
-    "main.52b76074.css.map": "/static/css/main.52b76074.css.map",
-    "main.ef331a0e.js.map": "/static/js/main.ef331a0e.js.map",
+    "main.acd9d887.css.map": "/static/css/main.acd9d887.css.map",
+    "main.5fb4ab38.js.map": "/static/js/main.5fb4ab38.js.map",
     "64.321cb3da.chunk.css.map": "/static/css/64.321cb3da.chunk.css.map",
     "64.56dc6704.chunk.js.map": "/static/js/64.56dc6704.chunk.js.map",
     "769.a01dde10.chunk.css.map": "/static/css/769.a01dde10.chunk.css.map",
-    "769.bda0d7b7.chunk.js.map": "/static/js/769.bda0d7b7.chunk.js.map"
+    "769.54a6b126.chunk.js.map": "/static/js/769.54a6b126.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52b76074.css",
-    "static/js/main.ef331a0e.js"
+    "static/css/main.acd9d887.css",
+    "static/js/main.5fb4ab38.js"
   ]
 }
