@@ -219,7 +219,7 @@ const bigProjects = {
         "A drone that maps disaster areas with a heat map and air-drops rescue balls. 2nd place, College Charity Track.",
       images: [
         require("./assets/images/rescue-flight.jpg"),
-        require("./assets/images/rescue-booth.jpg"),
+        require("./assets/images/rescue-booth-full.jpg"),
         require("./assets/images/rescue-award.jpg")
       ],
       details: [
