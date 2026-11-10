@@ -116,41 +116,28 @@ const educationInfo = {
 };
 
 // ========== 經歷 ==========
-// 經歷卡寫「在哪裡、負責什麼」；做出來的東西放到下面的專案卡
-// 卡片上方色帶會從 logo 取色，請各自換成單位的 logo
+// 經歷卡寫「在哪裡、負責什麼」；做出來的東西放到上面的專案卡
+// bannerColor：卡片上方色帶的顏色，不寫就用預設的深灰 #1d1d1f
+// companylogo：正方形 PNG，會裁成圓形填滿整個圓框
 const workExperiences = {
   display: true,
   experience: [
     {
       role: "Undergraduate Researcher",
       company: "NASA Lab, NTU EE",
-      // 換成實驗室 logo（沒有就用台大校徽）
-      companylogo: require("./assets/images/airbnbLogo.png"),
+      companylogo: require("./assets/images/nasa-lab-logo.png"),
       date: "Feb 2026 – Present",
       desc: "FPGA-Accelerated MPC Flight Controller for Indoor UAV · Supervisor: Prof. Cheng-Wei Chen",
       descBullets: [
         "Migrated low-level flight control from the Zynq PS to PX4 on a Pixhawk 6C, recalibrating the IMU, optical-flow sensor, motors and power wiring",
-        "Built the ROS 2 link between PX4 and the lab's FPGA-based MPC solver (developed by senior members)",
-        "Validated the system in indoor flight with OptiTrack motion capture as ground truth"
-      ]
-    },
-    {
-      role: "Simulation Engineer, Industry Project",
-      company: "ELAN Microelectronics × NASA Lab",
-      // 換成義隆 logo（公開前請先確認能否具名，見回覆說明）
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "Feb 2026 – Present",
-      desc: "Simulation support for ELAN's in-house flight-controller chip.",
-      descBullets: [
-        "Set up a PX4 SITL environment and injected sensor noise to mimic real measurement error",
-        "Analyzed how IMU sampling rate (125–1000 Hz) affects flight performance, as input for the chip's specifications"
+        "Built the ROS 2 link between PX4 and the lab's FPGA-based MPC solver (developed by senior members), validated in indoor flight with OptiTrack motion capture",
+        "Industry project with ELAN Microelectronics: analyzed how IMU sampling rate (125–1000 Hz) affects flight in PX4 SITL with injected sensor noise"
       ]
     },
     {
       role: "Vehicle Dynamics Division",
       company: "NTU Racing Team (Formula Student)",
-      // 換成賽車隊 logo
-      companylogo: require("./assets/images/airbnbLogo.png"),
+      companylogo: require("./assets/images/ntu-racing-logo.png"),
       date: "Sep 2025 – Present",
       desc: "Vehicle dynamics modeling and parameter analysis for the team's race car.",
       descBullets: [
@@ -161,8 +148,7 @@ const workExperiences = {
     {
       role: "President",
       company: "NTU ME International Compass (NTUMEIC)",
-      // 換成 NTUMEIC logo
-      companylogo: require("./assets/images/quoraLogo.png"),
+      companylogo: require("./assets/images/ntumeic-logo.png"),
       date: "Sep 2025 – Present",
       desc: "Leading a nonprofit that bridges the information gap for NTU students pursuing graduate study abroad.",
       descBullets: [
@@ -174,8 +160,7 @@ const workExperiences = {
     {
       role: "International Student Ambassador & Team Lead",
       company: "Office of International Affairs, NTU",
-      // 換成台大國際處 logo 或台大校徽
-      companylogo: require("./assets/images/airbnbLogo.png"),
+      companylogo: require("./assets/images/oia-logo.png"),
       date: "Feb 2025 – Present",
       desc: "Helping incoming international and exchange students settle in at NTU.",
       descBullets: [
