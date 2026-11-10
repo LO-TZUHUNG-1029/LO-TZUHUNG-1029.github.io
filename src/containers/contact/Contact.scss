@@ -46,10 +46,53 @@
 }
 
 .contact-image-div > img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   margin-left: 1.5rem;
-  margin-top: -4rem;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* 聯絡方式清單 */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  border-top: 1px solid $lightBorder1;
+}
+
+.contact-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid $lightBorder1;
+}
+
+.contact-label {
+  flex: 0 0 110px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $subTitle;
+}
+
+.contact-value {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.contact-link {
+  font-size: 22px;
+  color: $textColor;
+  text-decoration: none;
+  word-break: break-all;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: $buttonHover;
 }
 
 /* Media Query */
@@ -81,7 +124,23 @@
     font-size: 20px;
   }
 
+}
+
+@media (max-width: 768px) {
   .contact-image-div {
     display: none;
+  }
+
+  .contact-row {
+    gap: 1rem;
+  }
+
+  .contact-label {
+    flex-basis: 80px;
+    text-align: left;
+  }
+
+  .contact-link {
+    font-size: 17px;
   }
 }

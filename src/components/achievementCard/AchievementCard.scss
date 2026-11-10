@@ -38,11 +38,19 @@
 }
 .certificate-image-div {
   position: relative;
-  height: 250px;
+  aspect-ratio: 16 / 9; /* 原本固定 250px 高，改成 16:9 圖片區 */
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 8px;
+  background-color: $lightBackground3;
+}
+
+/* 照片填滿圖片區 */
+.certificate-image-div .card-image {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .achievement-cards-div {
   display: grid;

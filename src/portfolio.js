@@ -220,7 +220,7 @@ const bigProjects = {
       images: [
         require("./assets/images/rescue-flight.jpg"),
         require("./assets/images/rescue-booth-full.jpg"),
-        require("./assets/images/rescue-award.jpg")
+        require("./assets/images/rescue-team.jpg")
       ],
       details: [
         {
@@ -374,6 +374,7 @@ const bigProjects = {
 };
 
 // ========== 獎項與證照 ==========
+// 圖片建議 16:9，會填滿卡片上方的圖片區
 const achievementSection = {
   title: "Awards & Certifications",
   subtitle: "Competitions and language certificates.",
@@ -382,23 +383,15 @@ const achievementSection = {
       title: "2nd Place — Compassion Tech Innovation Competition",
       subtitle:
         "College Charity Track, 2026. Also received the Special Award and the Most Popular Award for our search-and-rescue drone.",
-      // 📷 團隊領獎照或獎狀（正方形裁切）
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Award ceremony",
+      image: require("./assets/images/rescue-award.jpg"),
+      imageAlt: "Team on stage with the 2nd Place, Special Award and Most Popular Award boards",
       footerLink: []
     },
     {
       title: "TOEFL iBT 5.0 (CEFR C1)",
-      subtitle: "Reading 4.5 · Listening 5.5 · Writing 5.0 · Speaking 4.0",
-      image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "TOEFL",
-      footerLink: []
-    },
-    {
-      title: "German — Goethe A2 (in progress)",
-      subtitle: "Currently learning German, aiming for the Goethe-Zertifikat A2 in March 2027.",
-      image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "German",
+      subtitle: "Reading 4.5 · Listening 5.5 · Writing 5.0 · Speaking 4.0 · October 2026",
+      image: require("./assets/images/toefl-score.jpg"),
+      imageAlt: "TOEFL iBT score report: overall 5.0 of 6, CEFR C1",
       footerLink: []
     }
   ],
@@ -443,13 +436,31 @@ const resumeSection = {
 const contactInfo = {
   title: "Contact Me",
   subtitle:
-    "Working on flight control, UAV testbeds, or just want to talk about drones? My inbox is open.",
+    "Working on UAVs or robotics, or just want a casual chat? My inbox is open.",
   number: "",
   email_address: "lojacob2020@gmail.com",
-  // 📷 個人照（半身、自然光、單色背景，4:3）
-  image:
-    "https://placehold.co/1200x900/f5f5f7/6b6b6b?text=Profile+photo+4:3",
-  imageAlt: "Tzu-Hung Lo"
+  // 聯絡方式清單：label 是小標，有 text 就顯示一行連結，有 links 就並排顯示多個連結
+  contacts: [
+    {
+      label: "Personal",
+      text: "lojacob2020@gmail.com",
+      url: "mailto:lojacob2020@gmail.com"
+    },
+    {
+      label: "School",
+      text: "b12502180@ntu.edu.tw",
+      url: "mailto:b12502180@ntu.edu.tw"
+    },
+    {
+      label: "NTUMEIC",
+      links: [
+        {name: "Instagram", url: "https://www.instagram.com/ntume_ic/"},
+        {name: "Medium", url: "https://medium.com/@ntumeinternationalcompass"}
+      ]
+    }
+  ],
+  image: require("./assets/images/profile.jpg"),
+  imageAlt: "Tzu-Hung Lo sitting on a rock ledge above the mountains"
 };
 
 const isHireable = false;
