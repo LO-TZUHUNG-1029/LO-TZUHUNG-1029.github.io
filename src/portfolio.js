@@ -37,7 +37,7 @@ const greeting = {
     "Hi, I'm Tzu-Hung. A Mechanical Engineering student at National Taiwan University. I work on UAV flight control — taking controllers from simulation to real flight.",
   // 📷 hero.jpg 要先放進 src/assets/images/，否則網站會報錯
   image: require("./assets/images/hero.jpg"),
-  imageAlt: "Tzu-Hung Lo testing a quadrotor in lab.",
+  imageAlt: "Tzu-Hung Lo with a caged quadrotor in the OptiTrack motion-capture arena",
   // 網站版履歷（無電話）：命名 resume.pdf，放進 src/containers/greeting/
   resumeLink: "resume.pdf",
   displayGreeting: true
@@ -56,7 +56,7 @@ const skillsSection = {
   title: "What I do",
   subTitle: "FLIGHT CONTROL · EMBEDDED SYSTEMS · MODELING & SIMULATION",
   image: require("./assets/images/skills.jpg"),
-  imageAlt: "Pixhawk 6C flight controller and wiring on the quadrotor",
+  imageAlt: "Testing a quadrotor on a gimbal test rig in the lab",
   skills: [
     "Bring flight controllers from the bench to real flight — integrating PX4 and ROS 2 on quadrotors and validating them with OptiTrack motion capture",
     "Build simulation environments in PX4 SITL and Gazebo to study how sensor noise and sampling rate affect flight",
@@ -158,15 +158,15 @@ const workExperiences = {
       ]
     },
     {
-      role: "International Student Ambassador & Team Lead",
+      role: "International Student Ambassador (Team Lead) & International Student Volunteer",
       company: "Office of International Affairs, NTU",
       companylogo: require("./assets/images/oia-logo.png"),
-      date: "Feb 2025 – Present",
+      // 113-2 / 114-1 / 115-1 學期
+      date: "Spring 2025 · Fall 2025 · Fall 2026",
       desc: "Helping incoming international and exchange students settle in at NTU.",
       descBullets: [
-        "Led a team of 3 ambassadors to plan and run campus tours for new international students",
-        "Helped dozens of students check in for the Chinese proficiency test",
-        "Supported 4 international and exchange students one-on-one with pre-arrival registration, course selection and housing"
+        "Ambassador (Spring 2025) and Team Lead (Fall 2025): led 3 ambassadors to plan and run campus tours for new international students, and helped dozens of students check in for the Chinese proficiency test",
+        "Volunteer (Fall 2026): supported 4 international and exchange students one-on-one with pre-arrival registration, course selection and housing"
       ]
     }
   ]
@@ -185,10 +185,8 @@ const featuredProject = {
   title: "FPGA-MPC Quadrotor",
   subtitle:
     "Taking an FPGA-accelerated model predictive controller from the bench to real flight. I moved low-level control onto PX4, built the ROS 2 link to the FPGA solver, and validated the system with OptiTrack motion capture.",
-  // 📷 四旋翼懸停在飛行場中，暗背景、機體在畫面中央（16:9）
-  image:
-    "https://placehold.co/1600x900/1d1d1f/a1a1a6?text=Quadrotor+hovering+16:9",
-  imageAlt: "FPGA-MPC quadrotor hovering in the motion-capture arena",
+  image: require("./assets/images/featured.jpg"),
+  imageAlt: "Quadrotor with Pixhawk 6C flight controller, ESCs and wiring",
   // 🎬 有懸停影片的話（10–15 秒、無聲、不超過約 10 MB）：
   // video: require("./assets/images/uav-flight.mp4"),
   video: null,
