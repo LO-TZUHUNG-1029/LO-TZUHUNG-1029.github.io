@@ -221,3 +221,11 @@
     font-size: 28px;
   }
 }
+
+/* 桌機縮放 75% 時，vh 也會被縮小，這裡補回來，讓視窗高度維持在螢幕的 88% */
+@media (min-width: 1200px) {
+  .pm-dialog,
+  .pm-scroll {
+    max-height: calc(88vh / 0.75);
+  }
+}

@@ -11,6 +11,15 @@ html,
 body {
   scroll-behavior: smooth;
 }
+
+/* 桌機版整體縮放成 75%（等同瀏覽器縮放 75%）
+   只套用在 1200px 以上的螢幕；手機、平板維持原本大小
+   想調整比例：把 0.75 改成其他數字，ProjectModal.scss 裡的 0.75 也要一起改 */
+@media (min-width: 1200px) {
+  html {
+    zoom: 0.75;
+  }
+}
 body {
   margin: 0;
   background-color: #ffffff;
